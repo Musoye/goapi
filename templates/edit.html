@@ -1,0 +1,8 @@
+{{define "head"}}<title>Edit Proverb</title>{{end}}
+{{define "body"}}
+<h1>Edit Proverb</h1>
+<form action="/proverbs/update/{{.Id}}" method="post">
+<p>Title:<br> <input type="text" value="{{.Proverb.Content}}" name="content"></p>
+ <p><input type="submit" value="submit"/></p>
+</form>
+{{end}}

@@ -1,0 +1,26 @@
+{{define "head"}}<title>Index</title>{{end}}
+{{define "body"}}
+<h1>Proverbs List</h1>
+<p>
+    <a href="/proverbs/add">Add Proverb</a>
+</p>
+<div>
+    <table border="1">
+        <tr>
+            <th>Content</th>
+            <th>Created On</th>
+            <th>Actions</th>
+        </tr>
+        {{range $key,$value := . }}
+        <tr>
+            <td> {{$value.Content}}</td>
+            <td>{{$value.CreatedOn}}</td>
+            <td>
+                <a href="/proverbs/edit/{{$key}}">Edit</a> |
+                <a href="/proverbs/delete/{{$key}}">Delete</a>
+            </td>
+        </tr>
+        {{end}}
+    </table>
+</div>
+{{end}}
